@@ -22,11 +22,46 @@ body{cursor: default; font: 14px 'Roboto', sans-serif; margin: 0; width: 100%;ba
 .tpl-info-fad .sta-info-fad_text{width: 60%;min-width: 250px; margin: 0 auto;}
 .tpl-info-fad .sta-info-fad_sello{width: 40%;margin:0 auto; margin-top:20px; font: bold 44px 'Oswald'; line-height: 175px; background-size: cover; background-repeat: no-repeat; background-position: center; width: 175px; height: 175px;}
 @media (min-width: 801px){
-.tpl-info-fad .sta-info-fad_text{ margin-right: 50px; min-width: 510px;}
+.tpl-info-fad .sta-info-fad_text{ margin-right: 50px; min-width: 510px; line-height: 33px;}
 .tpl-info-fad .sta-info-fad_text,
 .tpl-info-fad .sta-info-fad_sello{display: inline-block; vertical-align: middle;}
 }
 /* fin tpl-info-fad */
 
-/**/
-/**/
+/* tpl-hoteles-fad */
+.tpl-hoteles-fad{text-align: center; font:300 24px 'Roboto';}
+.tpl-hoteles-fad .sta-hoteles-fad_title{max-width: 370px;margin: 0 auto; letter-spacing: .025em; margin-bottom: 20px;}
+.tpl-hoteles-fad .sta-hoteles-fad_img{width: 150px; height: 15px; background-position: center; background-repeat: no-repeat; background-size: content; margin: 0 auto 50px;}
+.tpl-hoteles-fad .sta-hoteles-fad_containerhotels{max-width: 1280px; margin: 0 auto;}
+.tpl-hoteles-fad .sta-hoteles-fad_boxhotels{width: 230px; min-height: 340px; background-position: center; background-repeat: no-repeat; background-size: cover; display: inline-block; vertical-align: middle; margin: 10px 5px; border-radius: 20px; position: relative;}
+.tpl-hoteles-fad  .sta-hoteles-fad_infocont{position: relative;}
+.tpl-hoteles-fad .sta-hoteles-fad_fondo{background: red;position: absolute;width: 50px;height: 60px;top: 5px; right: 0; left: 0; margin: 0 auto;}
+.tpl-hoteles-fad .sta-hoteles-fad_sello{width: 60px; height: 70px; margin: 0 auto; background-position: center; background-size: cover; background-repeat: no-repeat; margin-top: 70px; position: relative;}
+.tpl-hoteles-fad .sta-hoteles-fad_vermas{position: absolute; bottom: 0; left: 0; right: 0;width: 100%; height: 40px; line-height: 40px;background: #fb8c5a; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; color: #fff;}
+.tpl-hoteles-fad .sta-hoteles-fad_hotel span{display: block;margin: 10px 0; font-weight: 300;}
+.tpl-hoteles-fad .sta-hoteles-fad_hotel{color: #fff; font-weight: 500;}
+.tpl-hoteles-fad .sta-hoteles-fad_enviar{margin: 40px 0;}
+.tpl-hoteles-fad .sta-hoteles-fad_enviar button{width: 235px; height: 60px; margin: 0 auto; background: #fb8c5a; color: #fff; border: 2px solid #fb8c5a; transition: .3s;}
+.tpl-hoteles-fad .sta-hoteles-fad_enviar button:hover{background: transparent; color: #fb8c5a; }
+/* fin tpl-hoteles-fad */
+
+
+/* tpl-baseslegales-fad */
+.tpl-baseslegales-fad{text-align: center; font: 18px 'Roboto'; padding: 20px 0}
+.tpl-baseslegales-fad .sta-baseslegales-fad_link{border-bottom: 2px solid #000; max-width: 120px; margin: 0 auto;}
+.tpl-baseslegales-fad .sta-baseslegales-fad_link a:hover{text-decoration: none;}
+/* fin tpl-baseslegales-fad */
+
+
+/*tpl-footer-fad*/
+.tpl-footer-fad{text-align: center; background: #00111b;}
+.tpl-footer-fad .sta-footer-fad_max{max-width: 1200px; margin: 0 auto; height: 50px; padding: 20px;}
+.tpl-footer-fad .sta-footer-fad_izq{}
+.tpl-footer-fad .sta-footer-fad_logo:after{content: "\e051"; font: 100px 'Icons'; color: #fff;}
+.tpl-footer-fad .sta-footer-fad_logo1:after{content: "\^"; font: 100px 'Icons'; color: #fff;}
+.tpl-footer-fad .sta-footer-fad_logo2:after{content: "\;"; font: 100px 'Icons'; color: #fff;}
+.tpl-footer-fad{}
+.tpl-footer-fad{}
+.tpl-footer-fad{}
+.tpl-footer-fad{}
+/*fin tpl-footer-fad*/

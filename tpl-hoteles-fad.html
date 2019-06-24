@@ -1,24 +1,300 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
-  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Roboto:300,400|Oswald" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Roboto:300,400,500,600|Oswald"
+    rel="stylesheet">
   <link rel="stylesheet" href="fonts/icons.css">
   <script src="js/jquery-1.8.3.min.js"></script>
 </head>
+
 <body>
 
 
-<div class="tpl-hoteles-fad">
-  <div class="sta-hoteles-fad_max">
+  <div class="tpl-hoteles-fad">
+    <div class="sta-hoteles-fad_max">
+      <div class="sta-hoteles-fad_title">
+        Selecciona tantos hoteles como experiencias quieras vivir
+      </div>
+      <div class="sta-hoteles-fad_img" style="background-image: url('images/ondas.png')">
 
-  </div>
-</div>
+      </div>
+      <div class="sta-hoteles-fad_containerhotels">
+
+
+        <div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+              <!-- preparar svg, numero en un div y background color del div el sello irá en un after/before -->
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div><div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div><div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div><div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div><div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div><div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div><div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div><div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div> <div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div><div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div><div class="sta-hoteles-fad_boxhotels"
+          style="background-image: url('https://images.eurostarshotels.com/CLIENTES/nl/images/001/generica/fanDay/Hoteles/hotel9.jpg')">
+          <div class="sta-hoteles-fad_infocont">
+            <div class="sta-hoteles-fad_fondo"> </div>
+            <div class="sta-hoteles-fad_sello" style="background-image: url('images/sello.png')">
+                <svg viewBox="0 0 248.809 291.102">
+                  <path fill="#FFFFFF"
+                    d="M249.12,57.056V15.216c-4.271,0-8.12-1.779-10.852-4.64c-2.858-2.729-4.648-6.591-4.648-10.86h-31.4   c0,8.29-6.71,15-15,15h-0.94c-8.278,0-15-6.71-15-15h-31.398c0,8.29-6.72,15-15,15h-0.95c-8.28,0-15-6.71-15-15h-31.4   c0,8.29-6.71,15-15,15h-0.938c-8.29,0-15-6.71-15-15h-31.4c0,4.271-1.79,8.131-4.648,10.86c-2.73,2.859-6.58,4.64-10.852,4.64   v41.841c8.28,0,15,6.72,15,15v1.109c0,8.28-6.72,15-15,15v41.83c8.28,0,15,6.72,15,15v1.109c0,8.279-6.72,15-15,15v41.83   c8.28,0,15,6.721,15,15v1.109c0,8.28-6.72,15-15,15v41.84c4.271,0,8.12,1.78,10.852,4.641c2.858,2.729,4.648,6.591,4.648,10.859   h31.4c0-8.289,6.71-15,15-15h0.938c8.29,0,15,6.711,15,15h31.4c0-8.289,6.72-15,15-15h0.95c8.28,0,15,6.711,15,15h31.398   c0-8.289,6.711-15,15-15h0.94c8.29,0,15,6.711,15,15h31.4c0-4.27,1.79-8.13,4.648-10.859c2.73-2.859,6.58-4.641,10.852-4.641   v-41.84c-8.28,0-15-6.72-15-15v-1.109c0-8.279,6.72-15,15-15v-41.83c-8.28,0-15-6.721-15-15v-1.109c0-8.28,6.72-15,15-15v-41.83   c-8.28,0-15-6.72-15-15v-1.109C234.12,63.775,240.839,57.056,249.12,57.056z M214.29,256.706H34.519V34.396H214.29V256.706z">
+                  </path>
+                  <text transform="matrix(1 0 0 1 39.8494 214.8865)" fill="#FFFFFF" font-family="'Oswald',sans-serif"
+                    font-size="177.1729">04</text>
+                </svg>
+             
+            </div>
+            <div class="sta-hoteles-fad_cityhotel">
+              <span class="sta-hoteles-fad_hotel">
+                <span>Panama</span>
+                Eurostars Grand Marino 5GL
+              </span>
+            </div>
+          </div>
+          <button class="sta-hoteles-fad_vermas">
+            Ver mas
+          </button>
+        </div>
 
 
 </body>
+
 </html>
