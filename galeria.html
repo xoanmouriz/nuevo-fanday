@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <script src='js/jquery-1.8.3.min.js'></script>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="fonts/icons.css"/>
+        <script>
+        </script>
+        <style>
+        /* NO AÑADIR CSS AQUÍ */ 
+        #arabe{position:fixed;bottom:0;right:0;border:1px solid #000;padding:5px;}
+        html{height:auto;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+        body{margin:0;width:100%;cursor:default;display:block;}
+        body.regla:after,
+        body.regla:before{content:'';position:fixed;background:violet;z-index:99999999}
+        body.regla:after{left:0;top:50%;right:0;bottom:auto;height:1px}
+        body.regla:before{left:50%;top:0;right:auto;bottom:0;width:1px}
+        </style>
+        <script>
+            //NO AÑADIR FUNCIONES AQUÍ
+            function change(){var h=document.querySelector('html');h.lang!='es'?h.lang='es':h.lang='ar';};
+        </script>
+    </head>
+    <body class="regla">
+        <main>
+          <style>
+            .prueba{width:450px;height:300px;margin:500px auto;margin-top:200px;background:green;position: relative;}
+            .bu{background:#000;color:#fff;}
+            
+
+            .tpl-galeria-eh{position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;}
+            .tpl-galeria-eh .sta-galeria-eh_p{position: absolute;left:0;top:0;bottom:0;width:100%;background-position:center;background-repeat:no-repeat;background-size:cover;}
+            .tpl-galeria-eh .sta-galeria-eh_bL,
+            .tpl-galeria-eh .sta-galeria-eh_bR{position:absolute;top:0;left:0;bottom:0;width:40px;background:rgba(0,0,0,.25);z-index:1;transition:.3s;}
+            .tpl-galeria-eh .sta-galeria-eh_bL.sta-fin,
+            .tpl-galeria-eh .sta-galeria-eh_bR.sta-fin{background:rgba(255,0,0,.25);}
+            .tpl-galeria-eh .sta-galeria-eh_bR{left:auto;right:0;}
+          </style>
+
+          <div id="bu2"><ul class="bu"><li>Texto1: {text1}</li><li>Texto2: {text2}</li><li>Texto3: {text3}</li></ul></div>
+
+          <div class="prueba">
+            <div class="sta-galeria-eh"></div>
+          </div>
+
+          <div class="prueba">
+            <div class="sta-galeria-eh"></div>
+          </div>
+
+          <script>
+
+            function Galeria(param){
+              if( 
+                typeof param != 'object' || 
+                typeof param.o == 'undefined' || 
+                !Array.isArray(param.photos) || 
+                param.photos.length < 1
+              )return false;
+              
+              var dParam = {
+                //o         : Object, //----------------obligatorio
+                type      : 'opacity', //carrusel
+                infinity  : !0, //false
+                //photos    : [], //----------------obligatorio que sea Array con minimo 1
+                callback  : !!0,//function 
+                automatic : !!0, //false
+                act       : 0,
+                time      : 5e3,
+                buttons   : !0,
+                dedo      : !0,
+                cursor    : !!0,
+                aniTime   : 500,
+                template  : !!0,
+                tradus    : !!0
+              };
+              param = hotusa().controlDefecto(dParam,param);
+              param.dedo = $('html').hasClass('sf5') ? false : param.dedo;
+
+              var that = this;
+              that.$o = $(param.o);
+              that.t = param.type;
+              that.infinity = param.infinity;
+              that.photos = param.photos.slice();//clonar array
+              that.photos = [];
+              for (var i = 0; i < param.photos.length; i++) {
+                var _t = {
+                  src : param.photos[i]
+                };
+                that.photos.push(_t);
+              };
+              that.callback = param.callback;
+              that.automatic = param.automatic;
+              that.controlAuto = null;
+              that.act = param.act;
+              that.time = param.time;
+              that.aniTime = param.aniTime;
+              that.buttons = param.buttons;
+              that.dedo = param.dedo;
+              that.cursor = param.cursor;
+              that.$tpl = (function(){
+                if(param.template){
+                  var _p = $(param.template).clone().addClass('sta-galeria-eh_p');
+
+                  if($('<div></div>').append( _p ).html().indexOf('{image}') < 0 )
+                    _p.css('background-image','url("{image}")');
+                };
+
+                switch (that.t) {
+                  case 'opacity':
+                    return param.template ? _p.hide() : $('<div></div>',{
+                      "class":"sta-galeria-eh_p",
+                      "style":"background-image:url('{image}')"
+                    }).hide();
+                    break;
+                  case 'carrusel':
+                    return param.template ? _p.css('left','100%') : $('<div></div>',{
+                      "class":"sta-galeria-eh_p",
+                      "style":"background-image:url('{image}')"
+                    }).css('left','100%');
+                    
+                    break;
+                
+                  default:
+                    break;
+                };
+              })();
+              that.orderCarrusel = !0;
+              that.tradus = param.tradus && Array.isArray(param.tradus) && param.tradus.length == param.photos.length ? param.tradus.slice() : false;
+
+              that.cargaInicial();
+              
+              if( that.photos.length > 1 && that.buttons )that.generarButtons();
+            };
+
+            (function(G){
+              G.prototype.interval = function(){
+                var _t = this;
+                if( _t.automatic ){
+                  clearInterval(_t.controlAuto);
+                  switch ( _t.t ) {
+                    case 'opacity':
+                      _t.controlAuto = setInterval(function(){
+                        if( _t.plus() ){
+                          _t.cargaOpacidad();
+                        } else {
+                          clearInterval(_t.controlAuto);
+                        };
+                      }, _t.time);
+                      break;
+                    case 'carrusel':
+                      _t.controlAuto = setInterval(function(){
+                        if(_t.plus()){
+                          _t.cargaCarrusel();
+                        } else {
+                          clearInterval(_t.controlAuto);
+                        };
+                      }, _t.time);
+                      break;
+                  
+                    default:
+                      break;
+                  };
+                };
+              };
+              G.prototype.removePhoto = function(src){
+                var _t = this,
+                _p = _t.photos,
+                _n = _p.findIndex(function(e){return e.src == src});
+
+                _p.splice( _n , 1 );
+                if( _t.tradus ) _t.tradus.splice( _n , 1 );
+
+                if( _p.length > 0 ){
+                  return !0
+                } else {
+                  console.trace("Imagenes insuficientes");
+                  return !!0;
+                };
+              };
+              G.prototype.less = function(){
+                var _t = this;
+
+                if( _t.buttons && !_t.infinity ){
+                  _t.$bR.removeClass('sta-fin');
+                  
+                  _t.act < 2 ?
+                    _t.$bL.addClass('sta-fin') :
+                    _t.$bL.removeClass('sta-fin');
+                };
+
+                if( _t.act > 0 ){
+                  _t.act--;
+                  return !0;
+                } else if(_t.infinity) {
+                  _t.act = _t.photos.length-1;
+                  return !0;
+                };
+                return !!0;
+              };
+              G.prototype.plus = function(){
+                var _t = this;
+                
+                if( _t.buttons && !_t.infinity ){
+                  _t.$bL.removeClass('sta-fin');
+                  
+                  _t.act > _t.photos.length-3 ?
+                    _t.$bR.addClass('sta-fin') :
+                    _t.$bR.removeClass('sta-fin');
+                };
+
+                if( _t.act < _t.photos.length-1 ){
+                  _t.act++;
+                  return !0;
+                } else if(_t.infinity){
+                  _t.act = 0;
+                  return !0;
+                };
+                return !!0;
+              };
+              G.prototype.cargaInicial = function(){
+                var _t = this,
+                _elem = _t.photos[_t.act],
+                img = new Image();
+                
+                _t.$o.addClass('tpl-galeria-eh');
+                  
+                img.src = _elem.src;
+                img.onload = function(){
+                  var _src = this.src;
+
+                  _elem.$tpl = _t.remplace( _t.t == 'carrusel' ? _t.$tpl.clone().css('left','0') : _t.$tpl.clone().show() ,'{image}',_src);
+                  
+                  _t.$o.append( _elem.$tpl.addClass('sta-act') );
+
+                  if( _t.callback )_t.callback( _src );
+                  if( _t.photos.length > 1 )_t.interval();
+                };
+                img.onerror = function(){
+                  if( _t.removePhoto(this.src) )_t.cargaInicial();
+                };
+              };
+              G.prototype.cargaOpacidad = function(){
+                var _t = this,
+                _elem = _t.photos[_t.act];
+
+                if( _elem.$tpl ){
+                  var h = $('.sta-galeria-eh_p',_t.$o);
+
+                  _t.$o.append( _elem.$tpl.hide() );
+                  _elem.$tpl.fadeIn(_t.aniTime,function(){
+                    h.remove();
+                  });
+                  
+                  if( _t.callback )_t.callback( _elem.src );
+                }
+                else {
+                  var img = new Image();
+
+                  img.src = _elem.src;
+
+                  img.onload = function(){
+                    var _src = this.src,
+                    h = $('.sta-galeria-eh_p',_t.$o);
+
+                    _elem.$tpl = _t.remplace( _t.$tpl.clone() ,'{image}',_src);
+
+                    _t.$o.append( _elem.$tpl );
+                    _elem.$tpl.fadeIn(_t.aniTime,function(){
+                      h.remove();
+                    });
+
+                    if( _t.callback )_t.callback( _src );
+                  };
+                  img.onerror = function(){
+                    if( _t.removePhoto(this.src) )_t.cargaOpacidad();
+                  };
+                };
+              };
+              G.prototype.cargaCarrusel = function(){
+                var _t = this,
+                _elem = _t.photos[_t.act];
+                
+                if( _elem.$tpl ){
+                  var h = $('.sta-galeria-eh_p',_t.$o);
+
+                  if( _t.orderCarrusel ){
+                    _t.$o.append( _elem.$tpl.css('left','100%') );
+                    h.animate({'left':'-100%'},_t.aniTime);
+
+                    _elem.$tpl.animate({'left':0},_t.aniTime,function(){
+                      h.remove();
+                    });
+                  } else {
+                    _elem.$tpl.css('left','-100%');
+                    _t.$o.append( _elem.$tpl );
+                    h.animate({'left':'100%'},_t.aniTime);
+                    _elem.$tpl.animate({'left':0},_t.aniTime,function(){
+                      h.remove();
+                    });
+                  };
+                  
+                  if( _t.callback )_t.callback( _elem.src );
+                }
+                else {
+                  var img = new Image();
+
+                  img.src = _elem.src;
+
+                  img.onload = function(){
+                    var _src = this.src,
+                    h = $('.sta-galeria-eh_p',_t.$o);
+
+                    _elem.$tpl = _t.remplace( _t.$tpl.clone() ,'{image}',_src);
+
+                    if( _t.orderCarrusel ){
+                      _t.$o.append( _elem.$tpl );
+                      h.animate({'left':'-100%'},_t.aniTime);
+                      _elem.$tpl.animate({'left':0},_t.aniTime,function(){
+                        h.remove();
+                      });
+                    } else {
+                      _elem.$tpl.css('left','-100%');
+                      _t.$o.append( _elem.$tpl );
+                      h.animate({'left':'100%'},_t.aniTime);
+                      _elem.$tpl.animate({'left':0},_t.aniTime,function(){
+                        h.remove();
+                      });
+                    };
+
+                    if( _t.callback )_t.callback( _src );
+                  };
+                  img.onerror = function(){
+                    if( _t.removePhoto(this.src) )_t.cargaCarrusel();
+                  };
+                };
+
+              };
+              G.prototype.generarButtons = function(){
+                var _t = this;
+                _t.$bL = $('<button></button>',{
+                  'class' : 'sta-galeria-eh_bL'
+                }).appendTo(_t.$o);
+                _t.$bR = $('<button></button>',{
+                  'class' : 'sta-galeria-eh_bR'
+                }).appendTo(_t.$o);
+
+                if( !_t.infinity )_t.$bL.addClass('sta-fin');
+              
+                function _l(){
+                  _t.interval();
+                  if( _t.less() ){
+                    switch (_t.t) {
+                      case 'opacity':
+                        _t.cargaOpacidad();
+                        break;
+                      case 'carrusel':
+                        _t.orderCarrusel = !!0;
+                        _t.cargaCarrusel();
+                        break;
+                    
+                      default:
+                        break;
+                    };
+                  }
+                };
+                function _r(){
+                  _t.interval();
+                  if( _t.plus() ){
+                    switch (_t.t) {
+                      case 'opacity':
+                        _t.cargaOpacidad();
+                        break;
+                      case 'carrusel':
+                        _t.orderCarrusel = !0;
+                        _t.cargaCarrusel();
+                        break;
+                    
+                      default:
+                        break;
+                    };
+                  }
+                };
+
+                _t.$bL.click(_l);
+                _t.$bR.click(_r);
+
+                if( _t.dedo ){
+                  _t.$o.on('swipeleft',_l);
+                  _t.$o.on('swiperight',_r);
+                };
+
+                if( _t.cursor ){
+                  $(document).keydown(function(t){
+                    if( t.keyCode == 37 || t.keyCode == 39 ){
+                      var _top = _t.$o.offset().top,
+                      _hei = _t.$o.innerHeight(),
+                      _wTop = $(window).scrollTop(),
+                      _wHei = $(window).innerHeight();
+                      if( 
+                        _top + (_hei*2/3) > _wTop && 
+                        _wTop + _wHei > _top + _hei - (_hei*2/3)
+                      ){
+                        switch (t.keyCode) {
+                          case 37:
+                            _l();
+                            break;
+                          case 39:
+                            _r();
+                            break;
+                        };
+                      };
+                    };
+                  });
+                };
+              };
+              G.prototype.remplace = function(obj,str1,str2){
+                var _t = this,
+                _p = $('<div></div>').append(obj).html();
+                _p = _p.replace(new RegExp(str1,"g"),str2);
+
+                if( _t.tradus )$.each( _t.tradus[_t.act], function(i,e){ _p = _p.replace(new RegExp('{'+i+'}',"g"),e); });
+
+                return $(_p);
+              };
+            })(Galeria);
+            
+
+
+            (function(a,$,h){
+              function call_2(url){
+                console.log('Url del elemento cargado: ',url);
+              };
+              function ev(o){
+                var p = {
+                  o     : o.querySelector('.sta-galeria-eh'),
+                  // type  : 'carrusel',
+                  type  : 'opacity',
+                  photos: [
+                    'https://www.eurostarshotels.com/CLIENTES/www.eurostarshotels.com/images/ofertas/desayunos/banner.jpg',
+                    'https://synergy.booking-channel.com/api/hotels/208/medias/130',
+                    'https://synergy.booking-channel.com/api/hotels/208/medias/57',
+                    'https://synergy.booking-channel.com/api/hotels/208/medias/59'
+                  ],
+                  automatic: !!0,
+                  buttons : !0,
+                  // infinity : !!0,
+                  cursor : !!0,
+                  callback : call_2,
+                  //template: $('<div></div>', {class:'v2',style:'background-image:url(\'{image}\')'})
+                  // template: '<div><ul class="bu"><li>Texto1: {text1}</li><li>Texto2: {text2}</li><li>Texto3: {text3}</li></ul></div>',
+                  template: $('#bu2'),
+                  tradus: [
+                    {
+                      text1 : '1_Hola',
+                      text2 : '1_que',
+                      text3 : '1_tal?'
+                    },
+                    {
+                      text1 : '2_Hola',
+                      text2 : '2_que',
+                      text3 : '2_tal?'
+                    },
+                    {
+                      text1 : '3_Hola',
+                      text2 : '3_que',
+                      text3 : '3_tal?'
+                    },
+                    {
+                      text1 : '4_Hola',
+                      text2 : '4_que',
+                      text3 : '4_tal?'
+                    }
+                  ]
+                },
+                carga = {
+                  obj : $(o)
+                },
+                callback = function(){
+                  b = new Galeria(p);
+                };
+
+                h.cargaScrollAuto(carga,callback);
+              };
+
+              for (var i = 0; i < a.length; i++) {
+                ev(a[i]);
+              };
+            })(document.querySelectorAll('.prueba'),jQuery,hotusa())
+          </script>
+            
+        </main>
+        <button id="arabe" onclick="change()">AR</button>
+        <!-- <script src="js/scripts.js"></script> -->
+    </body>
+</html>
